@@ -46,6 +46,7 @@ export default function FacultyDashboard() {
   const facultyDept   = loggedInUser.department || "";
 
   /* ── State ── */
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeNav,      setActiveNav]      = useState("Dashboard");
   const [loading,        setLoading]        = useState(true);
   const [stats,          setStats]          = useState({ total: 0, approved: 0, pending: 0, cancelled: 0 });
@@ -105,7 +106,7 @@ const fetchDashboardData = async () => {
     <div className="fd-root">
 
       {/* Sidebar */}
-      <aside className="fd-sidebar">
+      <aside className={`fd-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="fd-brand">
           <span className="fd-brand-icon"><GridIcon /></span>
           <span className="fd-brand-text">Resource Allocation<br />System</span>
@@ -124,11 +125,24 @@ const fetchDashboardData = async () => {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+          <div
+            className="fd-overlay"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
+
       {/* Main */}
       <main className="fd-main">
 
         {/* Header */}
         <header className="fd-header">
+          <button
+              className="fd-menu-btn"
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+            >
+              <GridIcon />
+            </button>
           <div className="fd-welcome">
             <h1>Welcome back, {facultyName}!</h1>
             <p>Here's an overview of your resources and bookings.</p>

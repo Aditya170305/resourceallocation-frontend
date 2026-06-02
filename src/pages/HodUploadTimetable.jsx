@@ -32,6 +32,7 @@ export default function HodUploadTimetable() {
 
   /* ── State ── */
   const [activeNav, setActiveNav] = useState("Upload Time Table");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dragging,  setDragging]  = useState(false);
   const [file,      setFile]      = useState(null);
   const [uploaded,  setUploaded]  = useState(false);
@@ -43,6 +44,7 @@ export default function HodUploadTimetable() {
 
   /* ── Nav ── */
   const handleNav = (label) => {
+    setSidebarOpen(false);
     setActiveNav(label);
     if (label === "Logout")           { localStorage.removeItem("loggedInUser"); navigate("/login"); }
     if (label === "Dashboard")        navigate("/hod-dashboard");
@@ -185,7 +187,7 @@ export default function HodUploadTimetable() {
     <div className="tt-root">
 
       {/* ── Sidebar ── */}
-      <aside className="tt-sidebar">
+      <aside className={`tt-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="tt-brand">
           <span className="tt-brand-icon"><GridIcon /></span>
           <span className="tt-brand-text">Resource Allocation<br />System</span>
@@ -209,13 +211,27 @@ export default function HodUploadTimetable() {
 
         {/* Header */}
         <header className="tt-header">
-          <div>
-            <h1 className="tt-title">Upload Time Table</h1>
-            <p className="tt-subtitle">
-              Upload the department timetable Excel file to auto-populate lecture slots.
-              &nbsp;<strong style={{ color: "#15803d" }}>{hodDepartment}</strong>
-            </p>
-          </div>
+          <div className="tt-header-left">
+
+    <button
+      className="tt-menu-btn"
+      onClick={() => setSidebarOpen(!sidebarOpen)}
+    >
+      ☰
+    </button>
+
+    <div>
+      <h1 className="tt-title">Upload Time Table</h1>
+
+      <p className="tt-subtitle">
+        Upload the department timetable Excel file to auto-populate lecture slots.
+        <strong style={{ color: "#15803d" }}>
+          {" "}{hodDepartment}
+        </strong>
+      </p>
+    </div>
+
+  </div>
           <div className="tt-header-right">
             <button className="tt-notif-btn"><BellIcon /></button>
             <div className="tt-user-chip">

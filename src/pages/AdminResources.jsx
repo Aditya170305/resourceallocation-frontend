@@ -50,6 +50,7 @@ export default function AdminResources() {
 
   /* ── State ── */
   const [activeNav,    setActiveNav]    = useState("Manage Resources");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [resources,    setResources]    = useState([]);
   const [filtered,     setFiltered]     = useState([]);
   const [loading,      setLoading]      = useState(true);
@@ -192,6 +193,7 @@ export default function AdminResources() {
 
   /* ── Nav ── */
   const handleNav = (label) => {
+    setSidebarOpen(false);
     setActiveNav(label);
     if (label === "Logout")           { localStorage.removeItem("loggedInUser"); navigate("/login"); }
     if (label === "Dashboard")        navigate("/admin-dashboard");
@@ -213,7 +215,7 @@ export default function AdminResources() {
     <div className="ar-root">
 
       {/* ── Sidebar ── */}
-      <aside className="ar-sidebar">
+      <aside className={`ar-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="ar-brand">
           <span className="ar-brand-icon"><GridIcon /></span>
           <span className="ar-brand-text">Resource Allocation<br />System</span>
@@ -237,12 +239,23 @@ export default function AdminResources() {
 
         {/* Header */}
         <header className="ar-header">
-          <div>
-            <h1 className="ar-title">Manage Resources</h1>
-            <p className="ar-subtitle">
-              Admin view — all resources across all departments.
-            </p>
-          </div>
+           <div className="ar-header-left">
+
+                <button
+                  className="ar-menu-btn"
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                >
+                  ☰
+                </button>
+
+                <div>
+                  <h1 className="ar-title">Manage Resources</h1>
+                  <p className="ar-subtitle">
+                    Admin view — all resources across all departments.
+                  </p>
+                </div>
+
+              </div>
           <div className="ar-header-right">
             <button className="ar-notif-btn"><BellIcon /></button>
             <div className="ar-user-chip">

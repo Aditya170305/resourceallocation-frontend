@@ -149,6 +149,7 @@ export default function MyRequests() {
 
   /* ── UI States ── */
   const [activeNav,   setActiveNav]   = useState("My Requests");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab,   setActiveTab]   = useState("All");
   const [showModal,   setShowModal]   = useState(false);
   const [cancelId,    setCancelId]    = useState(null);
@@ -349,6 +350,7 @@ if (freeLectures.length > 0) {
 
   /* ── Handlers ── */
   const handleNav = (item) => {
+    setSidebarOpen(false);
     setActiveNav(item.label);
     if (item.label === "Logout") {
       localStorage.removeItem("loggedInUser");
@@ -591,7 +593,7 @@ if (selectedResource) {
     <div className="mb-root">
 
       {/* ── Sidebar ── */}
-      <aside className="mb-sidebar">
+      <aside className={`mb-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="mb-brand">
           <span className="mb-brand-icon"><GridIcon /></span>
           <span className="mb-brand-text">Resource Allocation<br />System</span>
@@ -614,10 +616,23 @@ if (selectedResource) {
       <div className="mb-main">
 
         <header className="mb-header">
-          <div>
-            <h1 className="mb-title">My Bookings</h1>
-            <p className="mb-subtitle">Manage and track all your resource reservations.</p>
-          </div>
+          <div className="mb-header-left">
+
+    <button
+      className="mb-menu-btn"
+      onClick={() => setSidebarOpen(!sidebarOpen)}
+    >
+      ☰
+    </button>
+
+    <div>
+      <h1 className="mb-title">My Bookings</h1>
+      <p className="mb-subtitle">
+        Manage and track all your resource reservations.
+      </p>
+    </div>
+
+  </div>
           <div className="mb-header-right">
             <button className="mb-notif-btn">
               <BellIcon />

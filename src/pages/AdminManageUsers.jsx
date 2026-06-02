@@ -45,6 +45,7 @@ export default function AdminManageUsers() {
 
   /* ── State ── */
   const [activeNav,   setActiveNav]   = useState("Manage Users");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [users,       setUsers]       = useState([]);
   const [filtered,    setFiltered]    = useState([]);
   const [loading,     setLoading]     = useState(true);
@@ -162,6 +163,7 @@ useEffect(() => {
 
   /* ── Nav ── */
   const handleNav = (label, path) => {
+    setSidebarOpen(false);
     setActiveNav(label);
     if (label === "Logout") {
       localStorage.removeItem("loggedInUser");
@@ -210,7 +212,7 @@ useEffect(() => {
     <div className="au-root">
 
       {/* ── Sidebar ── */}
-      <aside className="au-sidebar">
+      <aside className={`au-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="au-brand">
           <span className="au-brand-icon"><GridIcon /></span>
           <span className="au-brand-text">Resource Allocation<br />System</span>
@@ -234,12 +236,23 @@ useEffect(() => {
 
         {/* Header */}
         <header className="au-header">
-          <div>
-            <h1 className="au-title">Manage Users</h1>
-            <p className="au-subtitle">
-              View all Faculty and HOD members across departments.
-            </p>
-          </div>
+           <div className="au-header-left">
+
+                <button
+                  className="au-menu-btn"
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                >
+                  ☰
+                </button>
+
+                <div>
+                  <h1 className="au-title">Manage Users</h1>
+                  <p className="au-subtitle">
+                    View all Faculty and HOD members across departments.
+                  </p>
+                </div>
+
+              </div>
           <div className="au-header-right">
             <button className="au-notif-btn"><BellIcon /></button>
             <div className="au-user-chip">

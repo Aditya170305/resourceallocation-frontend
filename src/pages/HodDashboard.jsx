@@ -31,6 +31,7 @@ export default function HodDashboard() {
 
   /* ── State ── */
   const [activeNav,  setActiveNav]  = useState("Dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [requests,   setRequests]   = useState([]);   // pending requests from API
   const [stats,      setStats]      = useState({ total: 0, approved: 0, pending: 0, rejected: 0, cancelled: 0 });
   const [recentActions, setRecentActions] = useState([]); // approved/rejected
@@ -153,6 +154,7 @@ export default function HodDashboard() {
 
   /* ── Nav handler ── */
   const handleNav = (item) => {
+    setSidebarOpen(false);
     setActiveNav(item.label);
     if (item.label === "Logout") {
       localStorage.removeItem("loggedInUser");
@@ -189,7 +191,7 @@ export default function HodDashboard() {
     <div className="hod-root">
 
       {/* ── Sidebar ── */}
-      <aside className="hod-sidebar">
+      <aside className={`hod-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="hod-brand">
           <span className="hod-brand-icon"><GridIcon /></span>
           <span className="hod-brand-text">Resource Allocation<br />System</span>
@@ -213,15 +215,23 @@ export default function HodDashboard() {
 
         {/* Header */}
         <header className="hod-header">
-          <div>
-            <h1 className="hod-title">Dashboard</h1>
-            <p className="hod-subtitle">
-              Welcome back, {hodName}!&nbsp;
-              <span style={{ color: "#6b7280", fontSize: "13px" }}>
-                ({hodDepartment})
-              </span>
-            </p>
-          </div>
+           <div className="hod-header-left">
+
+    <button
+      className="hod-menu-btn"
+      onClick={() => setSidebarOpen(!sidebarOpen)}
+    >
+      ☰
+    </button>
+
+    <div>
+      <h1 className="hod-title">Dashboard</h1>
+      <p className="hod-subtitle">
+        Welcome back, {hodName}!
+      </p>
+    </div>
+
+  </div>
           <div className="hod-header-right">
             <button className="hod-notif-btn">
               <BellIcon />

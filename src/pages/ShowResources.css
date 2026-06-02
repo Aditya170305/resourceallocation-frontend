@@ -641,3 +641,46 @@ body { font-family: "Segoe UI", sans-serif; }
   .rc-sidebar { width: 58px; }
   .rc-brand-text, .rc-nav-item span:last-child { display: none; }
 }
+
+/* Hamburger hidden on desktop */
+.rc-menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1a1d2e;
+}
+
+/* Mobile Sidebar */
+@media (max-width: 768px) {
+
+  .rc-menu-btn {
+    display: block;
+  }
+
+  .rc-sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    z-index: 999;
+    height: 100vh;
+    transition: left 0.3s ease;
+  }
+
+  .rc-sidebar.open {
+    left: 0;
+  }
+
+  .rc-main {
+    width: 100%;
+  }
+
+  .rc-header {
+    padding: 12px;
+  }
+
+  .rc-title {
+    font-size: 18px;
+  }
+}

@@ -268,3 +268,98 @@ body { font-family: "Segoe UI", sans-serif; }
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* Mobile Hamburger */
+
+.hr-menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:var(--text-primary);
+}
+
+.hr-header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+@media (max-width:768px){
+
+  .hr-menu-btn{
+    display:block;
+  }
+
+  .hr-sidebar{
+    position:fixed;
+    top:0;
+    left:-230px;
+    width:210px;
+    height:100vh;
+    z-index:1000;
+    transition:left .3s ease;
+  }
+
+  .hr-sidebar.open{
+    left:0;
+  }
+
+  .hr-main{
+    width:100%;
+  }
+
+  .hr-header{
+    padding:14px;
+  }
+
+  .hr-user-text{
+    display:none;
+  }
+
+  .hr-content{
+    padding:14px;
+  }
+
+  .hr-stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hr-count-label{
+    width:100%;
+    margin-left:0;
+  }
+
+  .hr-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hr-form-row{
+    grid-template-columns:1fr;
+  }
+
+  .hr-modal{
+    width:95%;
+    margin:10px;
+  }
+}
+
+@media (max-width:480px){
+
+  .hr-stats{
+    grid-template-columns:1fr;
+  }
+
+  .hr-title{
+    font-size:18px;
+  }
+
+  .hr-list{
+    overflow-x:auto;
+  }
+
+  .hr-list-table{
+    min-width:800px;
+  }
+}

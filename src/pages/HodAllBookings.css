@@ -404,3 +404,74 @@ body { font-family: "Segoe UI", sans-serif; }
   .ab-stats { grid-template-columns: 1fr 1fr; }
   .ab-toolbar { flex-direction: column; align-items: flex-start; }
 }
+
+/* Hamburger */
+.ab-menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:#0f2318;
+  margin-right:10px;
+}
+
+.ab-header-left{
+  display:flex;
+  align-items:center;
+}
+
+/* Mobile Sidebar */
+@media (max-width:768px){
+
+  .ab-menu-btn{
+    display:block;
+  }
+
+  .ab-sidebar{
+    position:fixed;
+    left:-230px;
+    top:0;
+    width:218px;
+    height:100vh;
+    z-index:1000;
+    transition:left .3s ease;
+  }
+
+  .ab-sidebar.open{
+    left:0;
+  }
+
+  .ab-main{
+    width:100%;
+  }
+
+  .ab-user-text{
+    display:none;
+  }
+
+  .ab-stats{
+    grid-template-columns:1fr;
+  }
+
+  .ab-toolbar{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .ab-filters{
+    width:100%;
+  }
+
+  .ab-search{
+    width:100%;
+  }
+
+  .ab-filter-select{
+    width:100%;
+  }
+
+  .ab-drawer{
+    width:100%;
+  }
+}

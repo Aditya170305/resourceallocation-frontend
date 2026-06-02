@@ -145,3 +145,44 @@
     .register-left { display: none; }
     .input-row { flex-direction: column; gap: 15px; }
 }
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .register-right {
+        padding: 30px 20px;
+    }
+
+    .form-box {
+        max-width: 100%;
+    }
+
+    .form-header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .register-right {
+        padding: 20px 15px;
+    }
+
+    .form-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .input-group input,
+    .input-group select {
+        font-size: 16px;
+    }
+
+    .checkbox-field {
+        align-items: flex-start;
+    }
+
+    .checkbox-field label {
+        line-height: 1.5;
+    }
+}

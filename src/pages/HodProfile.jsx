@@ -47,6 +47,7 @@ export default function Profile() {
 
   /* ── State ── */
   const [activeNav,   setActiveNav]   = useState("Profile");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab,   setActiveTab]   = useState("info");   // "info" | "security"
 
   /* profile view fields */
@@ -156,6 +157,7 @@ export default function Profile() {
 
   /* ── Nav handler ── */
   const handleNav = (item) => {
+    setSidebarOpen(false);
     setActiveNav(item.label);
     if (item.label === "Logout") {
       localStorage.removeItem("loggedInUser");
@@ -174,7 +176,7 @@ export default function Profile() {
     <div className={`pf-root pf-root--${roleColor}`}>
 
       {/* ── Sidebar ── */}
-      <aside className="pf-sidebar">
+      <aside className={`pf-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="pf-brand">
           <span className="pf-brand-icon"><GridIcon /></span>
           <span className="pf-brand-text">Resource Allocation<br />System</span>
@@ -199,6 +201,12 @@ export default function Profile() {
         {/* Header */}
         <header className="pf-header">
           <div className="pf-header-left">
+             <button
+    className="pf-menu-btn"
+    onClick={() => setSidebarOpen(!sidebarOpen)}
+  >
+    ☰
+  </button>
             <button className="pf-back-btn" onClick={() => navigate(dashPath)}>
               <ArrowLeftIcon />
             </button>

@@ -43,6 +43,7 @@ export default function HodAllBookings() {
 
   /* ── State ── */
   const [activeNav,    setActiveNav]    = useState("All Bookings");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab,    setActiveTab]    = useState("All");
   const [searchQuery,  setSearchQuery]  = useState("");
   const [filterRes,    setFilterRes]    = useState("All Resources");
@@ -170,6 +171,7 @@ export default function HodAllBookings() {
   };
 
   const handleNav = (label) => {
+    setSidebarOpen(false);
     setActiveNav(label);
     if (label === "Logout") {
       localStorage.removeItem("loggedInUser");
@@ -191,7 +193,7 @@ export default function HodAllBookings() {
     <div className="ab-root">
 
       {/* ── Sidebar ── */}
-      <aside className="ab-sidebar">
+      <aside className={`ab-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="ab-brand">
           <span className="ab-brand-icon"><GridIcon /></span>
           <span className="ab-brand-text">Resource Allocation<br />System</span>
@@ -215,10 +217,23 @@ export default function HodAllBookings() {
 
         {/* Header */}
         <header className="ab-header">
-          <div>
-            <h1 className="ab-title">All Bookings</h1>
-            <p className="ab-subtitle">Complete view of all resource bookings for {hodDepartment} department.</p>
-          </div>
+          <div className="ab-header-left">
+
+  <button
+    className="ab-menu-btn"
+    onClick={() => setSidebarOpen(!sidebarOpen)}
+  >
+    ☰
+  </button>
+
+  <div>
+    <h1 className="ab-title">All Bookings</h1>
+    <p className="ab-subtitle">
+      Complete view of all resource bookings for {hodDepartment} department.
+    </p>
+  </div>
+
+</div>
           <div className="ab-header-right">
             <button className="ab-notif-btn">
               <BellIcon />

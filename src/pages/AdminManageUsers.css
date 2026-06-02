@@ -281,3 +281,114 @@ body { font-family: "Segoe UI", sans-serif; }
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+
+/* Hamburger */
+
+.au-menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:var(--au-text-primary);
+}
+
+.au-header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Mobile Sidebar */
+
+@media (max-width:768px){
+
+  .au-menu-btn{
+    display:block;
+  }
+
+  .au-sidebar{
+    position:fixed;
+    top:0;
+    left:-230px;
+    width:218px;
+    height:100vh;
+    z-index:1000;
+    transition:left .3s ease;
+  }
+
+  .au-sidebar.open{
+    left:0;
+  }
+
+  .au-main{
+    width:100%;
+  }
+
+  .au-user-text{
+    display:none;
+  }
+
+  .au-content{
+    padding:14px;
+  }
+
+  .au-header{
+    padding:14px;
+  }
+
+  .au-stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .au-toolbar{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .au-search-box,
+  .au-select,
+  .au-select--dept{
+    width:100%;
+    min-width:100%;
+  }
+
+  .au-count-label{
+    margin-left:0;
+  }
+
+  .au-table-wrap{
+    overflow-x:auto;
+  }
+
+  .au-table{
+    min-width:900px;
+  }
+
+  .au-card-grid{
+    grid-template-columns:1fr;
+  }
+
+  .au-modal{
+    width:95%;
+    margin:10px;
+  }
+}
+
+@media (max-width:480px){
+
+  .au-stats{
+    grid-template-columns:1fr;
+  }
+
+  .au-title{
+    font-size:18px;
+  }
+
+  .au-toast{
+    left:10px;
+    right:10px;
+    width:auto;
+  }
+}

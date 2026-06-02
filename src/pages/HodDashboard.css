@@ -467,3 +467,72 @@ body { font-family: "Segoe UI", sans-serif; }
   .hod-stats { grid-template-columns: 1fr 1fr; }
   .hod-activity-by, .hod-activity-time { display: none; }
 }
+
+/* Hamburger */
+.hod-menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:#0f2318;
+  margin-right:10px;
+}
+
+.hod-header-left{
+  display:flex;
+  align-items:center;
+}
+
+/* Mobile Sidebar */
+@media (max-width:768px){
+
+  .hod-menu-btn{
+    display:block;
+  }
+
+  .hod-sidebar{
+    position:fixed;
+    left:-230px;
+    top:0;
+    width:218px;
+    height:100vh;
+    z-index:1000;
+    transition:left .3s ease;
+  }
+
+  .hod-sidebar.open{
+    left:0;
+  }
+
+  .hod-main{
+    width:100%;
+  }
+
+  .hod-user-text{
+    display:none;
+  }
+
+  .hod-stats{
+    grid-template-columns:1fr;
+  }
+
+  .hod-table-section,
+  .hod-activity-section{
+    overflow-x:auto;
+  }
+
+  .hod-header{
+    padding:14px;
+  }
+
+  .hod-title{
+    font-size:18px;
+  }
+
+  .hod-toast{
+    left:10px;
+    right:10px;
+    width:auto;
+  }
+}

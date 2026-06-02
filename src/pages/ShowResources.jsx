@@ -125,6 +125,7 @@ export default function ShowResources() {
   const userInitial    = userFullName.charAt(0).toUpperCase();
   const userDepartment = loggedInUser.department || "";   // ← ADD THIS
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeNav,   setActiveNav]   = useState("Show Resources");
   const [category,    setCategory]    = useState("Labs");
   const [viewMode,    setViewMode]    = useState("week");
@@ -394,7 +395,7 @@ export default function ShowResources() {
     <div className="rc-root">
 
       {/* ── Sidebar ─────────────────────── */}
-      <aside className="rc-sidebar">
+      <aside className={`rc-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="rc-brand">
           <span className="rc-brand-icon"><GridIcon /></span>
           <span className="rc-brand-text">Resource Allocation<br />System</span>
@@ -427,6 +428,12 @@ export default function ShowResources() {
         {/* Top header */}
         <header className="rc-header">
           <div className="rc-header-left">
+            <button
+              className="rc-menu-btn"
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+            >
+              ☰
+            </button>
             <button className="rc-back-btn" onClick={() => navigate("/faculty-dashboard")}>
               <ArrowLeftIcon />
             </button>

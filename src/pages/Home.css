@@ -267,3 +267,156 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+
+/* ==========================
+   TABLET RESPONSIVE
+========================== */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 18px 25px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 25px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-content p {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    margin-top: 40px;
+  }
+
+  .hero-image img {
+    width: 80%;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-logo {
+    justify-content: center;
+  }
+
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-auth {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+
+  .features-section {
+    padding: 60px 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+@media (max-width: 480px) {
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 1rem;
+  }
+
+  .btn-login-outline,
+  .btn-register {
+    width: 100%;
+  }
+}

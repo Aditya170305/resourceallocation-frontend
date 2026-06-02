@@ -345,8 +345,77 @@ body { font-family: "Segoe UI", sans-serif; }
   .pf-form-row  { grid-template-columns: 1fr; }
   .pf-hero-card { flex-direction: column; }
 }
-@media (max-width: 700px) {
-  .pf-sidebar { width: 60px; }
-  .pf-brand-text, .pf-nav-item span:last-child { display: none; }
-  .pf-content, .pf-header { padding-left: 14px; padding-right: 14px; }
+
+/* Hamburger */
+.pf-menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:var(--text-primary);
+}
+
+@media (max-width:700px){
+
+  .pf-menu-btn{
+    display:block;
+  }
+
+  .pf-sidebar{
+    position:fixed;
+    left:-230px;
+    top:0;
+    width:218px;
+    height:100vh;
+    z-index:1000;
+    transition:left .3s ease;
+  }
+
+  .pf-sidebar.open{
+    left:0;
+  }
+
+  .pf-main{
+    width:100%;
+  }
+
+  .pf-user-text{
+    display:none;
+  }
+
+  .pf-content,
+  .pf-header{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .pf-hero-card{
+    padding:18px;
+  }
+
+  .pf-card{
+    padding:18px;
+  }
+
+  .pf-tabs{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .pf-form-actions{
+    flex-direction:column;
+  }
+
+  .pf-btn-save,
+  .pf-btn-cancel{
+    width:100%;
+  }
+
+  .pf-toast{
+    left:10px;
+    right:10px;
+    width:auto;
+  }
 }

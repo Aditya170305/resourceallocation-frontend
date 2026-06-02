@@ -182,3 +182,46 @@
     .login-container { flex-direction: column; }
     .login-left { display: none; }
 }
+
+/* Mobile Improvements */
+@media (max-width: 768px) {
+
+    .login-right {
+        padding: 25px;
+    }
+
+    .form-box {
+        max-width: 100%;
+    }
+
+    .form-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .login-right {
+        padding: 20px 15px;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input,
+    .input-group select {
+        font-size: 16px;
+    }
+
+    .btn-login-submit,
+    .btn-create-account {
+        width: 100%;
+    }
+}

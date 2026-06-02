@@ -37,6 +37,7 @@ export default function HodResources() {
 
   /* ── State ── */
   const [activeNav,   setActiveNav]   = useState("Resources");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [resources,   setResources]   = useState([]);
   const [filtered,    setFiltered]    = useState([]);
   const [loading,     setLoading]     = useState(true);
@@ -153,6 +154,7 @@ export default function HodResources() {
 
   /* ── Nav ── */
   const handleNav = (label) => {
+    setSidebarOpen(false);
     setActiveNav(label);
     if (label === "Logout")           { localStorage.removeItem("loggedInUser"); navigate("/login"); }
     if (label === "Dashboard")        navigate("/hod-dashboard");
@@ -172,7 +174,7 @@ export default function HodResources() {
     <div className="hr-root">
 
       {/* ── Sidebar ── */}
-      <aside className="hr-sidebar">
+      <aside className={`hr-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="hr-brand">
           <span className="hr-brand-icon"><GridIcon /></span>
           <span className="hr-brand-text">Resource Allocation<br />System</span>
@@ -196,13 +198,26 @@ export default function HodResources() {
 
         {/* Header */}
         <header className="hr-header">
-          <div>
-            <h1 className="hr-title">Resources</h1>
-            <p className="hr-subtitle">
-              Manage resources for&nbsp;
-              <strong style={{ color: "#15803d" }}>{hodDepartment}</strong>
-            </p>
-          </div>
+          <div className="hr-header-left">
+
+    <button
+      className="hr-menu-btn"
+      onClick={() => setSidebarOpen(!sidebarOpen)}
+    >
+      ☰
+    </button>
+
+    <div>
+      <h1 className="hr-title">Resources</h1>
+      <p className="hr-subtitle">
+        Manage resources for&nbsp;
+        <strong style={{ color: "#15803d" }}>
+          {hodDepartment}
+        </strong>
+      </p>
+    </div>
+
+  </div>
           <div className="hr-header-right">
             <button className="hr-notif-btn"><BellIcon /></button>
             <div className="hr-user-chip">

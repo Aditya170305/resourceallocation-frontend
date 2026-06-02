@@ -408,3 +408,53 @@ body { font-family: "Segoe UI", sans-serif; }
   .fd-header { padding: 18px 14px 14px 14px; }
   .fd-avail-section { margin: 0 14px 24px 14px; }
 }
+
+/* Hide menu button on desktop */
+.fd-menu-btn{
+  display:none;
+}
+
+/* Mobile Sidebar */
+@media (max-width:768px){
+
+  .fd-menu-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:10px;
+    background:#fff;
+    cursor:pointer;
+    margin-right:12px;
+  }
+
+  .fd-sidebar{
+    position:fixed;
+    left:-220px;
+    top:0;
+    z-index:1000;
+    width:210px;
+    transition:0.3s ease;
+  }
+
+  .fd-sidebar.open{
+    left:0;
+  }
+
+  .fd-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:999;
+  }
+
+  .fd-header{
+    align-items:center;
+  }
+
+  .fd-user-info{
+    display:none;
+  }
+}

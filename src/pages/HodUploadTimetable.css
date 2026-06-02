@@ -432,9 +432,83 @@ body { font-family: "Segoe UI", sans-serif; }
   .tt-top-row { grid-template-columns: 1fr; }
   .tt-right-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 }
-@media (max-width: 768px) {
-  .tt-sidebar { width: 60px; }
-  .tt-brand-text, .tt-nav-item span:last-child { display: none; }
-  .tt-content, .tt-header { padding-left: 14px; padding-right: 14px; }
-  .tt-right-col { grid-template-columns: 1fr; }
+
+/* Hamburger */
+.tt-menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+  color:#0f2318;
+  margin-right:10px;
+}
+
+.tt-header-left{
+  display:flex;
+  align-items:center;
+}
+
+/* Mobile Sidebar */
+@media (max-width:768px){
+
+  .tt-menu-btn{
+    display:block;
+  }
+
+  .tt-sidebar{
+    position:fixed;
+    left:-230px;
+    top:0;
+    width:218px;
+    height:100vh;
+    z-index:1000;
+    transition:left .3s ease;
+  }
+
+  .tt-sidebar.open{
+    left:0;
+  }
+
+  .tt-main{
+    width:100%;
+  }
+
+  .tt-user-text{
+    display:none;
+  }
+
+  .tt-content,
+  .tt-header{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .tt-upload-card{
+    padding:16px;
+  }
+
+  .tt-dropzone{
+    padding:20px;
+    min-height:160px;
+  }
+
+  .tt-right-col{
+    grid-template-columns:1fr;
+  }
+
+  .tt-upload-actions{
+    flex-direction:column;
+  }
+
+  .tt-template-btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .tt-toast{
+    right:10px;
+    left:10px;
+    width:auto;
+  }
 }

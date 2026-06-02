@@ -41,6 +41,7 @@ export default function AdminDashboard() {
   const adminInitial = adminName.charAt(0).toUpperCase();
 
   const [activeNav,    setActiveNav]    = useState("Dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [bookings,     setBookings]     = useState([]);
   const [stats,        setStats]        = useState({ total: 0, active: 0, approved: 0, rejected: 0 });
   const [deptFilter,   setDeptFilter]   = useState("All Departments");
@@ -240,6 +241,7 @@ useEffect(() => {
 
   /* ── Nav ── */
   const handleNav = (item) => {
+    setSidebarOpen(false);
     setActiveNav(item.label);
     if (item.label === "Logout") {
       localStorage.removeItem("loggedInUser");
@@ -280,7 +282,7 @@ useEffect(() => {
     <div className="ad-root">
 
       {/* ── Sidebar ── */}
-      <aside className="ad-sidebar">
+      <aside className={`ad-sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="ad-brand">
           <span className="ad-brand-icon"><GridIcon /></span>
           <span className="ad-brand-text">Resource Allocation<br />System</span>
@@ -304,10 +306,23 @@ useEffect(() => {
 
         {/* Header */}
         <header className="ad-header">
-          <div>
-            <h1 className="ad-title">Dashboard</h1>
-            <p className="ad-subtitle">System-wide overview — all departments &amp; resources.</p>
-          </div>
+          <div className="ad-header-left">
+
+                <button
+                  className="ad-menu-btn"
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                >
+                  ☰
+                </button>
+
+                <div>
+                  <h1 className="ad-title">Dashboard</h1>
+                  <p className="ad-subtitle">
+                    System-wide overview — all departments & resources.
+                  </p>
+                </div>
+
+              </div>
           <div className="ad-user-card">
             <div className="ad-avatar">{adminInitial}</div>
             <div className="ad-user-info">
