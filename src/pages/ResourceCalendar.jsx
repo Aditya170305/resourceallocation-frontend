@@ -395,7 +395,7 @@ export default function ShowResources() {
                 if (label === "Dashboard") navigate("/faculty-dashboard");
                 if (label === "My Requests") navigate("/my-requests");
                 if (label === "Show Resources") navigate("/show-resources");
-                // if (label === "Profile") navigate("/faculty-profile");
+                if (label === "Profile") navigate("/faculty-profile");
 
               }}
             >

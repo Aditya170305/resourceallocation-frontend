@@ -359,7 +359,7 @@ if (freeLectures.length > 0) {
     if (item.label === "Dashboard") navigate("/faculty-dashboard");
     if (item.label === "My Requests") navigate("/my-requests");
     if (item.label === "Show Resources") navigate("/show-resources");
-    // if (item.label === "Profile") navigate("/faculty-profile");
+    if (item.label === "Profile") navigate("/faculty-profile");
   };
 
   const selectedResource = resources.find(
