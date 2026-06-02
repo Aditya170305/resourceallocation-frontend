@@ -29,7 +29,7 @@ function App() {
         <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
         <Route path="/resource-calendar" element={<ResourceCalendar />} />
         <Route path ="/show-resources" element={<ShowResources />} />
-        <Route path="/my-requests" element={<MyRequests />} />git
+        <Route path="/my-requests" element={<MyRequests />} />
         <Route path="/hod-dashboard" element={<HodDashboard />} />
         <Route path="/hod-all-bookings" element={<HodAllBookings />} />
         <Route path="/hod-resources" element={<HodResources />} />
