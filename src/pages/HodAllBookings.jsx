@@ -180,6 +180,7 @@ export default function HodAllBookings() {
     if (label === "Dashboard") navigate("/hod-dashboard");
     if (label === "Resources") navigate("/hod-resources");
     if (label === "Upload Time Table") navigate("/hod-upload-timetable");
+    if (label === "Profile") navigate("/hod-profile");
   };
 
   const SortIcon = ({ field }) => (

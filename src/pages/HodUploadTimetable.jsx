@@ -51,7 +51,7 @@ export default function HodUploadTimetable() {
     if (label === "All Bookings")     navigate("/hod-all-bookings");
     if (label === "Resources")        navigate("/hod-resources");
     if (label === "Upload Time Table") navigate("/hod-upload-timetable");
-    // if (label === "Profile")          navigate("/hod-profile");
+    if (label === "Profile")  navigate("/hod-profile");
   };
 
   /* ── Toast ── */
