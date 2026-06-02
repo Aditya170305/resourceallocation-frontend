@@ -630,9 +630,11 @@ body { font-family: "Segoe UI", sans-serif; }
   .rc-panel { width: 190px; }
 }
 @media (max-width: 700px) {
-  .rc-panel { display: none; }
-  .rc-sidebar { width: 58px; }
-  .rc-brand-text, .rc-nav-item span:last-child { display: none; }
+
+  .rc-panel {
+    display: none;
+  }
+
 }
 
 /* Hamburger Button */
@@ -654,11 +656,10 @@ body { font-family: "Segoe UI", sans-serif; }
 
   .rc-sidebar {
     position: fixed;
-    left: -220px;
+    left: -240px;
     top: 0;
-    width: 210px;
+    z-index: 999;
     height: 100vh;
-    z-index: 1000;
     transition: left 0.3s ease;
   }
 
@@ -674,15 +675,27 @@ body { font-family: "Segoe UI", sans-serif; }
     padding: 12px;
   }
 
-  .rc-header-right {
-    gap: 6px;
+  .rc-title {
+    font-size: 18px;
   }
 
-  .rc-user-text {
-    display: none;
+  /* ADD THESE */
+
+  .rc-body-wrap {
+    overflow-x: auto;
   }
 
-  .rc-panel {
-    display: none;
+  .rc-calendar {
+    min-width: 900px;
+  }
+
+  .rc-col-header,
+  .rc-day-col {
+    min-width: 120px;
+  }
+
+  .rc-time-spacer,
+  .rc-time-col {
+    width: 70px;
   }
 }

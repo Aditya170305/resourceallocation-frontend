@@ -637,11 +637,12 @@ body { font-family: "Segoe UI", sans-serif; }
   .rc-panel { width: 190px; }
 }
 @media (max-width: 700px) {
-  .rc-panel { display: none; }
-  .rc-sidebar { width: 58px; }
-  .rc-brand-text, .rc-nav-item span:last-child { display: none; }
-}
 
+  .rc-panel {
+    display: none;
+  }
+
+}
 /* Hamburger hidden on desktop */
 .rc-menu-btn {
   display: none;
@@ -682,5 +683,25 @@ body { font-family: "Segoe UI", sans-serif; }
 
   .rc-title {
     font-size: 18px;
+  }
+
+  /* ADD THESE */
+
+  .rc-body-wrap {
+    overflow-x: auto;
+  }
+
+  .rc-calendar {
+    min-width: 900px;
+  }
+
+  .rc-col-header,
+  .rc-day-col {
+    min-width: 120px;
+  }
+
+  .rc-time-spacer,
+  .rc-time-col {
+    width: 70px;
   }
 }

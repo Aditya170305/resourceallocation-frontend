@@ -406,6 +406,7 @@ export default function ShowResources() {
               key={label}
               className={`rc-nav-item ${activeNav === label ? "active" : ""}`}
               onClick={() => {
+                setSidebarOpen(false);
                 setActiveNav(label);
                 if (label === "Logout")    navigate("/login");
                 if (label === "Dashboard") navigate("/faculty-dashboard");
