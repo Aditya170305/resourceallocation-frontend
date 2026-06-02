@@ -1,0 +1,410 @@
+/* ── CSS Variables ── */
+:root {
+  --sidebar-bg: #0d1b8e;
+  --sidebar-active: #1a2fb5;
+  --sidebar-text: rgba(255, 255, 255, 0.78);
+  --sidebar-text-active: #ffffff;
+  --sidebar-width: 210px;
+
+  --main-bg: #f4f6fb;
+  --card-bg: #ffffff;
+  --border: #e8ecf4;
+
+  --text-primary: #1a1d2e;
+  --text-secondary: #6b7280;
+
+  --stat-blue-bg: #eff6ff;
+  --stat-orange-bg: #fff7ed;
+  --stat-green-bg: #f0fdf4;
+  --stat-red-bg: #fef2f2;
+
+  --badge-empty-bg: #dcfce7;
+  --badge-empty-text: #16a34a;
+  --badge-booked-bg: #fee2e2;
+  --badge-booked-text: #dc2626;
+  --badge-pending-bg: #ffedd5;
+  --badge-pending-text: #d97706;
+
+  --accent: #2563eb;
+}
+
+/* ── Reset / Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Segoe UI", sans-serif; }
+
+/* ── Root Layout ── */
+.fd-root {
+  display: flex;
+  min-height: 100vh;
+  background: var(--main-bg);
+}
+
+/* ════════════════════════════════
+   SIDEBAR
+════════════════════════════════ */
+.fd-sidebar {
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 24px 0;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+/* Brand */
+.fd-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 28px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 18px;
+}
+.fd-brand-icon {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px;
+  flex-shrink: 0;
+}
+.fd-brand-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+/* Nav */
+.fd-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 12px;
+  flex: 1;
+}
+.fd-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--sidebar-text);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background 0.18s, color 0.18s;
+}
+.fd-nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.fd-nav-item.active {
+  background: var(--sidebar-active);
+  color: var(--sidebar-text-active);
+}
+.fd-nav-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════
+   MAIN CONTENT
+════════════════════════════════ */
+.fd-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+/* ── Header ── */
+.fd-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 28px 32px 20px 32px;
+  background: var(--main-bg);
+}
+.fd-welcome h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.fd-welcome p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+.fd-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.fd-notif-btn {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+.fd-notif-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 999px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fd-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.fd-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fd-user-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.fd-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.fd-user-role {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+/* ── Stats Grid ── */
+.fd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding: 0 32px 24px 32px;
+}
+.fd-stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.fd-stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.fd-stat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.fd-stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.fd-stat-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+.fd-stat-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* ── Availability Section ── */
+.fd-avail-section {
+  margin: 0 32px 32px 32px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px 28px 22px 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.fd-avail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.fd-avail-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.fd-avail-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.fd-view-calendar-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border: 1.5px solid #2563eb;
+  background: #fff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.16s, color 0.16s;
+  white-space: nowrap;
+}
+.fd-view-calendar-btn:hover {
+  background: #eff6ff;
+}
+
+/* ── Table ── */
+.fd-table-wrapper {
+  overflow-x: auto;
+}
+.fd-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+.fd-th-resource,
+.fd-th-date {
+  padding: 10px 10px 14px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+}
+.fd-th-resource { text-align: left; padding-left: 0; min-width: 150px; }
+.fd-th-date {
+  display: table-cell;
+}
+.fd-date-label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.fd-tr {
+  border-top: 1px solid var(--border);
+}
+.fd-tr:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.fd-td-resource {
+  padding: 14px 10px 14px 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.fd-td-status {
+  padding: 10px 6px;
+  text-align: center;
+}
+
+/* ── Badges ── */
+.fd-badge {
+  display: inline-block;
+  padding: 5px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 72px;
+  text-align: center;
+}
+.fd-badge--empty   { background: var(--badge-empty-bg);   color: var(--badge-empty-text); }
+.fd-badge--booked  { background: var(--badge-booked-bg);  color: var(--badge-booked-text); }
+.fd-badge--pending { background: var(--badge-pending-bg); color: var(--badge-pending-text); }
+
+/* ── Legend ── */
+.fd-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.fd-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 500;
+}
+.fd-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.fd-dot--empty   { background: #22c55e; }
+.fd-dot--booked  { background: #ef4444; }
+.fd-dot--pending { background: #f59e0b; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .fd-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .fd-sidebar { width: 60px; }
+  .fd-brand-text,
+  .fd-nav-item span:last-child { display: none; }
+  .fd-brand { padding: 18px 10px; justify-content: center; }
+  .fd-stats-grid { grid-template-columns: 1fr; padding: 0 14px 16px 14px; }
+  .fd-header { padding: 18px 14px 14px 14px; }
+  .fd-avail-section { margin: 0 14px 24px 14px; }
+}

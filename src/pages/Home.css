@@ -1,0 +1,269 @@
+:root {
+  --primary-blue: #2563eb;
+  --dark-blue: #1e293b;
+  --light-bg: #f8fafc;
+  --text-gray: #64748b;
+  --white: #ffffff;
+}
+
+#root {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🔥 FULL PAGE FIX */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 🔷 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--white);
+  color: var(--dark-blue);
+}
+
+/* 🔷 Full Width Container */
+.landing-container {
+  width: 100%
+}
+
+.heading{
+
+    color: #ffffff;
+}
+
+/* 🔷 Navbar */
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  /* background: var(--dark-blue); */
+  background: var(--dark-blue);
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.nav-links li.active {
+  border-bottom: 2px solid var(--primary-blue);
+  opacity: 1;
+}
+
+.nav-auth {
+  display: flex;
+  gap: 15px;
+}
+
+/* 🔷 Buttons */
+.btn-primary {
+  background: var(--primary-blue);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary-blue);
+  border: 1px solid #ddd;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-register {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-login-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 🔷 Hero Section */
+.hero {
+  width: 100%;
+  padding: 80px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(to right, #ffffff, #f0f7ff);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.badge {
+  background: #e0eaff;
+  color: var(--primary-blue);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.hero-content h1 span {
+  color: var(--primary-blue);
+}
+
+.hero-content p {
+  color: var(--text-gray);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.hero-btns {
+  margin-bottom: 20px;
+}
+
+/* 🔷 Stats */
+.stats-row {
+  display: flex;
+  /* gap: 100px; */
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.stat-item {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+}
+
+/* 🔷 Hero Image */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 90%;
+  max-width: 500px;
+}
+
+/* 🔷 Features Section */
+.features-section {
+  width: 100%;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.sub-tag {
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.section-title {
+  margin-top: 10px;
+}
+
+/* 🔷 Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* 🔷 Cards */
+.feature-card {
+  padding: 40px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔷 Icons */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+}
+
+.blue { background: #e0f2fe; }
+.green { background: #dcfce7; }
+.purple { background: #f3e8ff; }
+.orange { background: #ffedd5; }
+
+/* 🔷 Responsive */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-row {
+    justify-content: center;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

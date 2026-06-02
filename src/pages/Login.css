@@ -1,0 +1,184 @@
+.login-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+/* 🔷 Left Side (Blue) */
+.login-left {
+    flex: 1;
+    background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: white;
+}
+
+.overlay-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.illustration-wrapper img {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 40px;
+}
+
+/* 🔷 Right Side (Form) */
+.login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    background-color: #f8fafc;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* 🔷 Input Groups - Labels Aligned Left */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.85rem;
+}
+
+/* 🔷 Password Wrapper Logic - Absolute positioning for the icon */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-group input, 
+.input-group select, 
+.password-wrapper input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background-color: white;
+    outline-color: #2563eb;
+}
+
+.password-wrapper input {
+    padding-right: 45px; /* Space for the eye icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1rem;
+    color: #64748b;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+}
+
+/* 🔷 Options and Buttons */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.forgot-password {
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-login-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #cbd5e1;
+    top: 50%;
+    left: 0;
+}
+
+.divider span {
+    background: #f8fafc;
+    padding: 0 10px;
+    position: relative;
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+.btn-create-account {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .login-container { flex-direction: column; }
+    .login-left { display: none; }
+}
