@@ -3,7 +3,8 @@ import "./AdminDashboard.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_BASE = "http://localhost:8080/api";
+// const API_BASE = "http://localhost:8080/api";
+const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
 
 const NAV_ITEMS = [
   { label: "Dashboard",        Icon: DashboardIcon,  path: "/admin-dashboard"   },
@@ -65,7 +66,7 @@ export default function AdminDashboard() {
   try {
 
     const res = await axios.get(
-      "http://localhost:8080/api/resources/departments"
+      `${import.meta.env.VITE_API_URL}/api/resources/departments`
     );
 
     setDepartments(res.data);
@@ -81,7 +82,7 @@ export default function AdminDashboard() {
   try {
 
     const res = await axios.get(
-      "http://localhost:8080/api/admin/bookings",
+      `${import.meta.env.VITE_API_URL}/api/admin/bookings`,
       {
         params: {
           department: selectedDepartment,
@@ -124,7 +125,7 @@ const fetchDashboardCounts = async () => {
     // RESOURCES COUNT
     const resourceRes =
       await axios.get(
-        "http://localhost:8080/api/resources/count",
+        `${import.meta.env.VITE_API_URL}/api/resources/count`,
         {
           params: {
             department: selectedDepartment
@@ -137,7 +138,7 @@ const fetchDashboardCounts = async () => {
     // USERS COUNT
     const usersRes =
       await axios.get(
-        "http://localhost:8080/api/users/count",
+        `${import.meta.env.VITE_API_URL}/api/users/count`,
         {
           params: {
             department: selectedDepartment

@@ -3,7 +3,8 @@ import "./HodAllBookings.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API_BASE = "http://localhost:8080/api";
+// const API_BASE = "http://localhost:8080/api";
+const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
 const ROWS_PER_PAGE = 8;
 
 /* ─── Nav ─────────────────────────────────────── */

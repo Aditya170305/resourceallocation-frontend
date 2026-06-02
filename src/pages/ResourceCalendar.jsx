@@ -43,7 +43,8 @@ const LECTURE_TIMES = {
 
 const HOURS = [9,10,11,12,13,14,15,16];
 
-const API_BASE = "http://localhost:8080/api";
+// const API_BASE = "http://localhost:8080/api";
+const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
 
 const CATEGORIES = ["Labs", "Halls", "Classrooms"];
 

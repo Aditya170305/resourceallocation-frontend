@@ -29,7 +29,7 @@ function Register() {
     e.preventDefault();
     try {
       // Ensure the URL matches your Spring Boot server port
-      const response = await axios.post("http://localhost:8080/api/register", formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, formData);
       alert(response.data); 
       navigate("/login");
     } catch (error) {

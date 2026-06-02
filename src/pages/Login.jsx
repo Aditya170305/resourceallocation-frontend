@@ -23,7 +23,7 @@ function Login() {
   const handleLogin = async (e) => {
   e.preventDefault();
   try {
-    const response = await axios.post("http://localhost:8080/api/login", {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, {
       username: loginData.username,
       password: loginData.password
     });
