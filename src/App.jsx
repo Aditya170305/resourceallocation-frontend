@@ -9,7 +9,7 @@ import MyRequests from "./pages/MyRequests"; //
 import HodDashboard from "./pages/HodDashboard";
 import HodAllBookings from "./pages/HodAllBookings";
 import HodResources from "./pages/HodResources";
-import HodUploadTimetable from "./pages/HodUploadTimetable";
+import HodUploadTimetable from "./pages/temp";
 import HodProfile from "./pages/HodProfile"
 import FacultyProfile from "./pages/FacultyProfile";
 import AdminDashboard from "./pages/AdminDashboard";
