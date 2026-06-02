@@ -234,6 +234,13 @@ export default function AdminResources() {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="ar-sidebar-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <div className="ar-main">
 

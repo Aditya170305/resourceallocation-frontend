@@ -400,10 +400,6 @@ body { font-family: "Segoe UI", sans-serif; }
   .fd-stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
-  .fd-sidebar { width: 60px; }
-  .fd-brand-text,
-  .fd-nav-item span:last-child { display: none; }
-  .fd-brand { padding: 18px 10px; justify-content: center; }
   .fd-stats-grid { grid-template-columns: 1fr; padding: 0 14px 16px 14px; }
   .fd-header { padding: 18px 14px 14px 14px; }
   .fd-avail-section { margin: 0 14px 24px 14px; }

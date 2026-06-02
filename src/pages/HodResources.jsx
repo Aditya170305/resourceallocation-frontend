@@ -193,6 +193,13 @@ export default function HodResources() {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="hr-sidebar-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <div className="hr-main">
 

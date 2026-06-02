@@ -391,6 +391,23 @@ body { font-family: "Segoe UI", sans-serif; }
     width:95%;
     margin:10px;
   }
+
+  .ar-brand-text,
+.ar-nav-item span:last-child{
+  display:block;
+}
+.ar-header-right{
+  gap:8px;
+}
+
+.ar-user-chip{
+  padding:6px 8px;
+}
+
+.ar-notif-btn{
+  width:34px;
+  height:34px;
+}
 }
 
 @media (max-width:480px){
@@ -404,4 +421,11 @@ body { font-family: "Segoe UI", sans-serif; }
     right:10px;
     width:auto;
   }
+}
+
+.ar-sidebar-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:999;
 }

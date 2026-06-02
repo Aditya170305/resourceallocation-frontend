@@ -346,9 +346,12 @@ body { font-family: "Segoe UI", sans-serif; }
   .pf-hero-card { flex-direction: column; }
 }
 @media (max-width: 700px) {
-  .pf-sidebar { width: 60px; }
-  .pf-brand-text, .pf-nav-item span:last-child { display: none; }
-  .pf-content, .pf-header { padding-left: 14px; padding-right: 14px; }
+
+  .pf-content,
+  .pf-header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }
 
 /* Hamburger */
@@ -427,4 +430,21 @@ body { font-family: "Segoe UI", sans-serif; }
     right:10px;
     width:auto;
   }
+
+  .pf-header-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.pf-user-chip{
+  display:none;
+}
+}
+
+.pf-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:999;
 }

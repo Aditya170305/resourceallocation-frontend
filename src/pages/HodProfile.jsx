@@ -195,6 +195,13 @@ export default function Profile() {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="pf-sidebar-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <div className="pf-main">
 

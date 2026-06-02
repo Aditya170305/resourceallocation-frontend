@@ -539,13 +539,31 @@ body { font-family: "Segoe UI", sans-serif; }
   .mb-stats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
-  .mb-sidebar { width: 58px; }
-  .mb-brand-text, .mb-nav-item span:last-child { display: none; }
-  .mb-content, .mb-header { padding-left: 14px; padding-right: 14px; }
-  .mb-stats { grid-template-columns: 1fr 1fr; }
-  .mb-card { flex-wrap: wrap; }
-  .mb-card-actions { flex-direction: row; width: 100%; justify-content: space-between; align-items: center; }
-  .mb-form-row { grid-template-columns: 1fr; }
+
+  .mb-content,
+  .mb-header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .mb-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mb-card {
+    flex-wrap: wrap;
+  }
+
+  .mb-card-actions {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mb-form-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Hamburger */
@@ -615,4 +633,15 @@ body { font-family: "Segoe UI", sans-serif; }
     width:95%;
     padding:20px;
   }
+
+  .mb-user-chip{
+  display:none;
+}
+
+.mb-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:999;
+}
 }

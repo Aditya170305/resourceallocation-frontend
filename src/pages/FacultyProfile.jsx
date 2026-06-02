@@ -28,6 +28,15 @@ const FACULTY_NAV = [
   { label: "Logout",         Icon: LogoutIcon,  path: "/login"             },
 ];
 
+// const HOD_NAV = [
+//   { label: "Dashboard",      Icon: HomeIcon,    path: "/hod-dashboard" },
+//   { label: "All Bookings",   Icon: BookingIcon, path: "/hod-all-bookings" },
+//   { label: "Resources",      Icon: ResIcon,     path: "/hod-resources" },
+//   { label: "Upload Time Table", Icon: UploadIcon, path: "/hod-upload-timetable" },
+//   { label: "Profile",        Icon: ProfileIcon, path: "/hod-profile" },
+//   { label: "Logout",         Icon: LogoutIcon,  path: "/login" },
+// ];
+
 /* ═══════════════════════════════════════════════════════════
    MAIN COMPONENT
 ═══════════════════════════════════════════════════════════ */
@@ -192,6 +201,13 @@ export default function Profile() {
           ))}
         </nav>
       </aside>
+
+      {sidebarOpen && (
+  <div
+    className="pf-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
 
       {/* ── Main ── */}
       <div className="pf-main">

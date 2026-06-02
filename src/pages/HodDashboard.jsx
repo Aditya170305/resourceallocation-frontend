@@ -210,6 +210,13 @@ export default function HodDashboard() {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="hod-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <div className="hod-main">
 

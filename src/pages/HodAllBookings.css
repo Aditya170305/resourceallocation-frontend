@@ -396,13 +396,26 @@ body { font-family: "Segoe UI", sans-serif; }
 
 /* Responsive */
 @media (max-width: 1100px) { .ab-stats { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 768px)  {
-  .ab-drawer { width: 100vw; }
-  .ab-sidebar { width: 60px; }
-  .ab-brand-text, .ab-nav-item span:last-child { display: none; }
-  .ab-content, .ab-header { padding-left: 14px; padding-right: 14px; }
-  .ab-stats { grid-template-columns: 1fr 1fr; }
-  .ab-toolbar { flex-direction: column; align-items: flex-start; }
+@media (max-width:768px){
+
+  .ab-drawer{
+    width:100vw;
+  }
+
+  .ab-content,
+  .ab-header{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .ab-stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .ab-toolbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 
 /* Hamburger */
@@ -474,4 +487,15 @@ body { font-family: "Segoe UI", sans-serif; }
   .ab-drawer{
     width:100%;
   }
+
+  .ab-table{
+  min-width:1200px;
+}
+}
+
+.ab-sidebar-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:999;
 }

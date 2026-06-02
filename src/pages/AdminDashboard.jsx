@@ -301,6 +301,13 @@ useEffect(() => {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="ad-sidebar-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <main className="ad-main">
 

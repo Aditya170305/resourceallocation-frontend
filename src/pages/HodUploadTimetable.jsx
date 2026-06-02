@@ -206,6 +206,13 @@ export default function HodUploadTimetable() {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="tt-sidebar-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <div className="tt-main">
 

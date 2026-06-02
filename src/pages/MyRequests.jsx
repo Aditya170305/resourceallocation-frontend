@@ -612,6 +612,13 @@ if (selectedResource) {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="mb-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <div className="mb-main">
 

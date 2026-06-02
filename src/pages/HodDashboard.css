@@ -461,11 +461,21 @@ body { font-family: "Segoe UI", sans-serif; }
   .hod-stats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
-  .hod-sidebar { width: 60px; }
-  .hod-brand-text, .hod-nav-item span:last-child { display: none; }
-  .hod-content, .hod-header { padding-left: 14px; padding-right: 14px; }
-  .hod-stats { grid-template-columns: 1fr 1fr; }
-  .hod-activity-by, .hod-activity-time { display: none; }
+
+  .hod-content,
+  .hod-header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hod-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hod-activity-by,
+  .hod-activity-time {
+    display: none;
+  }
 }
 
 /* Hamburger */
@@ -535,4 +545,15 @@ body { font-family: "Segoe UI", sans-serif; }
     right:10px;
     width:auto;
   }
+
+  .hod-table{
+  min-width:1000px;
+}
+}
+
+.hod-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:999;
 }

@@ -212,6 +212,13 @@ export default function HodAllBookings() {
         </nav>
       </aside>
 
+      {sidebarOpen && (
+  <div
+    className="ab-sidebar-overlay"
+    onClick={() => setSidebarOpen(false)}
+  />
+)}
+
       {/* ── Main ── */}
       <div className="ab-main">
 

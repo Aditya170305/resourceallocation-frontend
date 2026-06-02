@@ -374,6 +374,24 @@ body { font-family: "Segoe UI", sans-serif; }
     width:95%;
     margin:10px;
   }
+
+  .au-brand-text,
+.au-nav-item span:last-child{
+  display:block;
+}
+
+.au-header-right{
+  gap:8px;
+}
+
+.au-user-chip{
+  padding:6px 8px;
+}
+
+.au-notif-btn{
+  width:34px;
+  height:34px;
+}
 }
 
 @media (max-width:480px){
@@ -391,4 +409,11 @@ body { font-family: "Segoe UI", sans-serif; }
     right:10px;
     width:auto;
   }
+}
+
+.au-sidebar-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:999;
 }

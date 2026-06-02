@@ -511,4 +511,31 @@ body { font-family: "Segoe UI", sans-serif; }
     left:10px;
     width:auto;
   }
+
+  .tt-upload-now-btn,
+.tt-replace-btn{
+  width:100%;
+  justify-content:center;
+  display:flex;
+}
+
+.tt-header{
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.tt-header-right{
+  width:100%;
+  justify-content:flex-end;
+}
+.tt-dz-title{
+  word-break:break-word;
+}
+}
+
+.tt-sidebar-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:999;
 }

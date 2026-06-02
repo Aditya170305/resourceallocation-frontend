@@ -359,4 +359,16 @@ body { font-family: "Segoe UI", sans-serif; }
   .ad-table{
     min-width:900px;
   }
+
+  .ad-brand-text,
+.ad-nav-item span:last-child{
+  display:block;
+}
+}
+
+.ad-sidebar-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:999;
 }
